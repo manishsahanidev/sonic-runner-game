@@ -1,4 +1,5 @@
 import k from "../kaplayCtx";
+import { makeSonic } from "../entities/sonic";
 
 export default function mainMenu() {
   if (!k.getData("best-score")) k.setData("best-score", 0);
@@ -24,6 +25,22 @@ export default function mainMenu() {
   ];
 
   const gameSpeed = 4000;
+
+  // game text
+  k.add([
+    k.text("SONIC MANIA", { font: "mania", size: 96 }),
+    k.pos(k.center().x, 200),
+    k.anchor("center"),
+  ]);
+
+  k.add([
+    k.text("Press Space/Click/Touch to Play", { font: "mania", size: 32 }),
+    k.anchor("center"),
+    k.pos(k.center().x, k.center().y - 200),
+  ]);
+
+  // sonic character
+  makeSonic(k.vec2(200, 745));
 
   // infinite background scrolling
   k.onUpdate(() => {
