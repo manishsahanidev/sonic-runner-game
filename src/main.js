@@ -1,5 +1,6 @@
 import k from "./kaplayCtx";
 import game from "./scenes/game";
+import gameover from "./scenes/gameover";
 import mainMenu from "./scenes/mainMenu";
 
 // Load background and platform sprites
@@ -44,5 +45,6 @@ k.loadSound("city", "sounds/City.wav");
 
 k.scene("main-menu", mainMenu);
 k.scene("game", game);
+k.scene("gameover", gameover);
 
 k.go("main-menu");
